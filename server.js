@@ -11,6 +11,7 @@ require("dotenv").config();
 require("./config/db.connection")
 
 //CONTROLLER IMPORT
+const tweetController = require('./controllers/twitter-controller')
 
 const { PORT, MONGODB_URI } = process.env;
 
