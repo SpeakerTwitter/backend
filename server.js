@@ -10,17 +10,18 @@ const morgan = require('morgan')
 require("dotenv").config();
 require("./config/db.connection")
 
-//CONTROLLER IMPORT
-const tweetController = require('./controllers/twitter-controller')
-
 const { PORT, MONGODB_URI } = process.env;
+
+//CONTROLLER IMPORT
+const twitterController = require('./controllers/twitter-controller')
 
 //CORS HELPER FUNCTION
 app.use(cors())
 app.use(morgan('dev'))
+app.use('/tweets', twitterController)
 
 app.get("/", (req, res) => {
-    res.send("hello world");
+    res.redirect('/tweets');
 });
 
 // LISTENER
