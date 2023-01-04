@@ -18,6 +18,7 @@ const twitterController = require('./controllers/twitter-controller')
 //CORS HELPER FUNCTION
 app.use(cors())
 app.use(morgan('dev'))
+app.use(express.json());
 app.use('/tweets', twitterController)
 
 app.get("/", (req, res) => {
