@@ -1,28 +1,36 @@
 # Planning
 
 ## Features: 
-Create a tweet
-Read previous tweets via list
-Edit a tweet
-Delete a tweet
-Click on a tweet to view comments 
-Create comments on a tweet
+<ul>
+<li>Create a tweet
+<li>Read previous tweets via list
+<li>Edit a tweet
+<li>Delete a tweet
+<li>Click on a tweet to view comments 
+<li>Create comments on a tweet
+  </ul>
 
 ## Responsibilities 
-### Emily - frontend 
-### Gabriel - backend 
+### Emily - Frontend 
+<ul>
+  <li>UI Development - Components, API fetch, Animations
+  <li>Styling
+</ul>
+
+### Gabriel - Backend 
+<ul>
+  <li>Database Architecture - ERD, Data Mapping, Routing
+  <Routing Middleware
+</ul>
 
 ## User Story 
 <ul>
-<li>Our page loads and appears an option on top to create a tweet
-<li>An input field will allow for typing which is required. 
-<li>There is a separate input field for inputting a URL of an image, which is optional
-<li>A user can click submit which will add it to the other submitted tweets
-<li>User also see the list of tweets you’ve made 
-<li>User can click on a tweet and it opens onto new page where the user can see their tweet and the comments made on it by others or theirself
-<li>User can comment on tweet by typing in the comment section
-<li>User has the option to like, edit, or delete tweet
-<li>A home page link in the header will return the user to the home page if the link is clicked on
+<li>As a user, I would like to see all of my tweets as well as an input field which allows me to create another tweet. 
+<li>If I were to create a tweet, I can type it into the input field and click submit where it would appear at the top of my list of other tweets. 
+<li>As a user, I would also like to see who wrote the tweet, so a name is required to input when creating a tweet, and when they wrote it. The date is automatically populated. There is also an option to include a url of an image which is optional. If the tweet does have an image, I would like to see image showing on the home page. 
+<li>As a user, I would like to see more details about the tweet itself. When I click on it, I can see the full comment, an image if there is one, and the comments below. 
+<li>I can add more comments to the tweet but also like, edit, or delete tweet. 
+<li>In order to maneuver the site more easily, I can also return back to the home page by clicking on the icon at the top of the page. 
 </ul>
   
 ## User flow 
