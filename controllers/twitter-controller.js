@@ -34,8 +34,17 @@ router.get("/:id", async (req, res) => {
 	}catch(error){
 		console.error(error)
 	}
+});
 
-	res.status(200).json({message: "tweet show route: " + req.params.id })
+// TWEET UPDATE ROUTE
+router.put("/:id", async (req, res) => {
+	try{
+		const updatedTweet = await Tweet.findByIdAndUpdate(req.params.id, req.body)
+		console.log(updatedTweet)
+		res.status(200).json({message: "Successfully updated tweet", updatedTweet})
+	}catch(error){
+		res.status(400).json({error: "error"})
+	}
 });
 
 // TWEET DELETE ROUTE
