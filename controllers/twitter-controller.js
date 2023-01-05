@@ -36,15 +36,26 @@ router.get("/:id", async (req, res) => {
 	}
 });
 
-// TWEET DELETE ROUTE
-router.delete("/:id", async (req, res) => {
-	res.status(200).json({message: "tweet delete route: " + req.params.id })
-});
-
 // TWEET UPDATE ROUTE
 router.put("/:id", async (req, res) => {
-	console.log(req.body)
-	res.status(200).json({message: "tweet update route: " + req.params.id })
+	try{
+		const updatedTweet = await Tweet.findByIdAndUpdate(req.params.id, req.body)
+		console.log(updatedTweet)
+		res.status(200).json({message: "Successfully updated tweet", updatedTweet})
+	}catch(error){
+		res.status(400).json({error: "error"})
+	}
+});
+
+// TWEET DELETE ROUTE
+router.delete("/:id", async (req, res) => {
+	try{
+		const deletedTweet = await Tweet.findByIdAndDelete(req.params.id)
+		console.log(deletedTweet)
+		res.status(200).json({message: "Deleted Tweet", deletedTweet })	
+	}catch(err){
+		console.error(err)
+	}
 });
 
 module.exports = router
