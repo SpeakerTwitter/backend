@@ -20,7 +20,9 @@
 ### Gabriel - Backend 
 <ul>
   <li>Database Architecture - ERD, Data Mapping, Routing
-  <Routing Middleware
+  <li>Routing Middleware
+   <li>CRUD
+     <li>Deployment
 </ul>
 
 ## User Story 
