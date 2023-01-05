@@ -6,7 +6,12 @@ require("../config/db.connection");
 
 // INDEX ROUTE
 router.get("/", async (req, res) => {
-        res.status(200).json({message: "twitter index route"})
+	try {
+		const allTweets = await Tweet.find({})
+		res.status(200).json(allTweets)
+	}catch(err){
+		console.error(error)
+	}
 });
 
 // TWEET CREATE ROUTE
