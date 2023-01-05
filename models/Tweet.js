@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const TweetSchema = new mongoose.Schema({
-  tweet: {type: String, required: true},
+  name: {type: String, required: true},
+  title: String,
   image: String,
-  user: {type: String, required: true},
 },{timestamps: true});
 
 const Tweet = mongoose.model("Tweet", TweetSchema);
