@@ -28,14 +28,12 @@ router.post("/", async (req, res) =>  {
 // TWEET SHOW ROUTE
 router.get("/:id", async (req, res) => {
 	try {	
-		const singelTweet = await Tweet.findById(req.params.id)
+		const singleTweet = await Tweet.findById(req.params.id)
 		console.log(singleTweet, "the single tweet")
 		res.status(200).json(singleTweet)
 	}catch(error){
 		console.error(error)
 	}
-
-	res.status(200).json({message: "tweet show route: " + req.params.id })
 });
 
 // TWEET DELETE ROUTE
