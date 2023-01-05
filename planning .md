@@ -21,7 +21,6 @@
 <ul>
   <li>Database Architecture - ERD, Data Mapping, Routing
   <li>Routing Middleware
-   <li>CRUD
      <li>Deployment
 </ul>
 
