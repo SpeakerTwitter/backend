@@ -36,5 +36,28 @@ router.get('/:id', async (req, res, next) =>{
     }
 });
 
+//UPDATE ROUTE
+router.put('/:id', async (req, res, next) =>{
+    try{
+        const updatedComment= await Comment.findByIdAndUpdate(req.params.id, req.body)
+        console.log(updatedComment)
+        res.status(200).json(updatedComment)
+    }catch(error){
+        res.status(400).json({error: "error"})
+        return next(err)
+    }
+})
+
+//DELETE ROUTE 
+router.delete('/:id', async (req, res) =>{
+    try{
+        const deletedPerson = await People.findByIdAndDelete(req.params.id)
+        console.log(deletedPerson)
+        res.redirect('/people')
+    }catch(error){
+        res.status(400).json({error: "error"})
+    }
+})
+
 
 module.exports = router 
