@@ -24,5 +24,17 @@ router.post("/", async (req, res, next) =>  {
     }
 });
 
+//SHOW ROUTE 
+router.get('/:id', async (req, res, next) =>{
+    try{
+        const singleComment = await Comment.findById(req.params.id)
+        console.log(singleComment)
+        res.status(200).json(singleComment)
+    }catch(error){
+        res.status(400).json({error: "error"})
+        return next(err)
+    }
+});
+
 
 module.exports = router 
