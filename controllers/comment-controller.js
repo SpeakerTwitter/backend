@@ -49,15 +49,16 @@ router.put('/:id', async (req, res, next) =>{
 })
 
 //DELETE ROUTE 
-router.delete('/:id', async (req, res) =>{
+router.delete('/:id', async (req, res, next) =>{
     try{
-        const deletedPerson = await People.findByIdAndDelete(req.params.id)
-        console.log(deletedPerson)
-        res.redirect('/people')
+        const deletedComment = await Comment.findByIdAndDelete(req.params.id)
+        console.log(deletedComment)
+        res.redirect('/comments')
     }catch(error){
         res.status(400).json({error: "error"})
+        return next(err)
     }
-})
+});
 
 
 module.exports = router 
