@@ -13,16 +13,22 @@ require("./config/db.connection")
 const { PORT, MONGODB_URI } = process.env;
 
 //CONTROLLER IMPORT
-const twitterController = require('./controllers/twitter-controller')
+const twitterController = require('./controllers/twitter-controller');
+const commentController = require('./controllers/comment-controller');
 
-//CORS HELPER FUNCTION
+//MIDDLEWARE
 app.use(cors())
 app.use(morgan('dev'))
 app.use(express.json());
 app.use('/tweets', twitterController)
+app.use('/comments', commentController)
 
 app.get("/", (req, res) => {
     res.redirect('/tweets');
+});
+
+app.get("/comments", (req, res) => {
+    res.redirect('/comments');
 });
 
 // LISTENER
