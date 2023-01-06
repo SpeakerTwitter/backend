@@ -14,8 +14,15 @@ router.get("/", async (req, res, next) => {
 });
 
 // COMMENT CREATE ROUTE
-router.post("/", async (req, res) =>  {
-	res.status(201).json({message: "Comment create route"})
+router.post("/", async (req, res, next) =>  {
+    try {
+        const createComment = await Comment.create(req.body)
+        res.status(201).json(createComment)
+    } catch(err){
+		res.status(400).json({error: "error"})
+        return next(err)
+    }
 });
+
 
 module.exports = router 
