@@ -7,5 +7,4 @@ const TweetSchema = new mongoose.Schema({
 },{timestamps: true});
 
 const Tweet = mongoose.model("Tweet", TweetSchema);
-
 module.exports = Tweet
