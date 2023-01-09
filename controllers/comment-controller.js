@@ -1,17 +1,18 @@
 const express = require('express')
 const router = express.Router()
 const { Comment } = require('../models/')
+const { Tweet } = require('../models')
 
-// COMMENT INDEX ROUTE
-router.get("/", async (req, res, next) => {
-    try {
-        const allComments = await Comment.find({})
-        res.status(200).json(allComments)
-    }catch(error){
-        res.status(400).json({error: "error"})
-        return next(err)
-    }
-});
+// // COMMENT INDEX ROUTE// for user and front end route not relevent
+// router.get("/", async (req, res, next) => {
+//     try {
+//         const allComments = await Comment.find({})
+//         res.status(200).json(allComments)
+//     }catch(error){
+//         res.status(400).json({error: "error"})
+//         return next(err)
+//     }
+// });
 
 // COMMENT CREATE ROUTE
 router.post("/", async (req, res, next) =>  {
@@ -23,6 +24,26 @@ router.post("/", async (req, res, next) =>  {
         return next(err)
     }
 });
+
+router.post('/:id', async (req, res, next) => {
+	try {
+	const tweet = await Tweet.findById(req.params.id)
+    console.log(tweet)
+    console.log(req.body.name)
+	const commentToCreate = {
+		name: req.body.name,
+		title: req.body.title,
+		image: req.body.image
+	}
+	tweet.comments.push(commentToCreate)
+	await tweet.save()
+    res.status(200).send("success")
+	} catch(err) {
+		next(err)
+	} 
+})
+
+
 
 //SHOW ROUTE 
 router.get('/:id', async (req, res, next) =>{
