@@ -32,4 +32,4 @@ app.get("/comments", (req, res) => {
 });
 
 // LISTENER
-app.listen(process.env.PORT || 4000, () => console.log(`listening on PORT ${PORT}`));
+app.listen(PORT || 4000, () => console.log(`listening on PORT ${PORT}`));
