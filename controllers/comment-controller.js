@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const { Comment } = require('../models')
-const { Tweet } = require('../models')
+const { Comment } = require('../models/Index')
+const { Tweet } = require('../models/Index')
 
 // COMMENT INDEX ROUTE// for user and front end route not relevent
 router.get("/", async (req, res, next) => {
