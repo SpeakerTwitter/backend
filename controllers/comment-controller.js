@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { Comment } = require('../models/')
+const { Comment } = require('../models')
 const { Tweet } = require('../models')
 
 // // COMMENT INDEX ROUTE// for user and front end route not relevent

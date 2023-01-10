@@ -27,9 +27,6 @@ app.get("/", (req, res) => {
     res.redirect('/tweets');
 });
 
-app.get("/comments", (req, res) => {
-    res.redirect('/comments');
-});
 
 // LISTENER
 app.listen(PORT || 4000, () => console.log(`listening on PORT ${PORT}`));
