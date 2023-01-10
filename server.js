@@ -29,4 +29,4 @@ app.get("/", (req, res) => {
 
 
 // LISTENER
-app.listen(PORT || 4000, () => console.log(`listening on PORT ${PORT}`));
+app.listen(process.env.PORT || 4000, () => console.log(`listening on PORT ${PORT}`));
