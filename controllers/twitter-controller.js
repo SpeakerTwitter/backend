@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { Tweet } = require('../models')
+const { Tweet } = require('../models/Index')
 
 require("../config/db.connection");
 
