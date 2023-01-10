@@ -3,16 +3,16 @@ const router = express.Router()
 const { Comment } = require('../models')
 const { Tweet } = require('../models')
 
-// // COMMENT INDEX ROUTE// for user and front end route not relevent
-// router.get("/", async (req, res, next) => {
-//     try {
-//         const allComments = await Comment.find({})
-//         res.status(200).json(allComments)
-//     }catch(error){
-//         res.status(400).json({error: "error"})
-//         return next(err)
-//     }
-// });
+// COMMENT INDEX ROUTE// for user and front end route not relevent
+router.get("/", async (req, res, next) => {
+    try {
+        const allComments = await Comment.find({})
+        res.status(200).json(allComments)
+    }catch(error){
+        res.status(400).json({error: "error"})
+        return next(err)
+    }
+});
 
 // COMMENT CREATE ROUTE
 router.post("/", async (req, res, next) =>  {
