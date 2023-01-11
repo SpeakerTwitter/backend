@@ -3,7 +3,7 @@ const Comment = require('./Comment')
 
 const TweetSchema = new mongoose.Schema({
   name: {type: String, required: true},
-  title: String,
+  title: {type: String, required: true},
   image: String,
   comments: [Comment.schema]
 },{timestamps: true});
